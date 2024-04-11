@@ -1,4 +1,5 @@
 import numpy as np
+import streamlit as st
 import pandas as pd
 import cv2
 import os
@@ -13,9 +14,12 @@ load_dotenv()
 
 #Connect to redis
 
-host=os.getenv('HOST')
-port=os.getenv('PORT')
-password=os.getenv('PASSWORD')
+#host=os.getenv('HOST')
+host=st.secrets('HOST')
+# port=os.getenv('PORT')
+port=st.secrets('PORT')
+# password=os.getenv('PASSWORD')
+password=st.secrets('PASSWORD')
 r = redis.StrictRedis(host=host, port=port, password=password)  #decode_responses=False
 #configure face analysis
 faceapp= FaceAnalysis(name='buffalo_sc',
