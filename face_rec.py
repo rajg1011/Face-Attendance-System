@@ -9,9 +9,6 @@ from sklearn.metrics import pairwise
 import time #python inbuilt library no need to install
 from datetime import datetime
 
-from dotenv import load_dotenv
-load_dotenv()
-
 #Connect to redis
 
 #host=os.getenv('HOST')
